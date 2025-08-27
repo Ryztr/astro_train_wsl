@@ -1,18 +1,26 @@
 ---
+/* String variable */
 const pageTitle = "About Me";
 
+/* Object variable */
 const identity = {
   firstName: "Sarah",
   country: "Canada",
   occupation: "Technical Writer",
   hobbies: ["photography", "birdwatching", "baseball"],
 };
-
+/* Array variable */
 const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
 
+/* Logical variables */
 const happy = true;
 const finished = false;
 const goal = 3;
+
+/* Styling variables */
+const skillColor = "navy";
+const fontWeight = "bold";
+const textCase = "uppercase";
 ---
 
 <html lang="en">
@@ -20,7 +28,25 @@ const goal = 3;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
+
+    <style define:vars={{skillColor, fontWeight, textCase}}>
+
+      h1 {
+        color: purple;  
+        font-size: 4rem;
+      }
+
+        .skill {
+        color: var(--skillColor);
+        text-transform: var(--textCase);
+        font-weight: var(--fontWeight);
+    }
+
+    </style>
+    
   </head>
+
+  
   <body>
     <a href="/">Home</a>
     <a href="/about/">About</a>
@@ -44,7 +70,7 @@ const goal = 3;
     <p>My skills are:</p>
 
     <ul>
-    {skills.map((skill) => <li>{skill}</li>)}
+    {skills.map((skill) => <li class="skill">{skill}</li>)}
     </ul>
 
     {happy && <p>I am happy to be learning Astro!</p>}
