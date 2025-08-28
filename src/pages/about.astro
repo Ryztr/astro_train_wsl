@@ -1,4 +1,7 @@
 ---
+
+import "../styles/global.css";
+
 /* String variable */
 const pageTitle = "About Me";
 
@@ -21,6 +24,18 @@ const goal = 3;
 const skillColor = "navy";
 const fontWeight = "bold";
 const textCase = "uppercase";
+
+// h1 specific style variable
+const fontSize = "5rem";
+const h1Color = "pink";
+
+// Example of a more complex object
+const Food = {
+  name: "Pizza",
+  origin: "Italy",
+  isHealthy: false,
+};
+
 ---
 
 <html lang="en">
@@ -29,11 +44,12 @@ const textCase = "uppercase";
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
 
-    <style define:vars={{skillColor, fontWeight, textCase}}>
+   // page specific styles scoped to this file
+    <style define:vars={{skillColor, fontWeight, textCase, fontSize, h1Color}}>
 
       h1 {
-        color: purple;  
-        font-size: 4rem;
+        color: var(--h1Color);  
+        font-size: var(--fontSize);
       }
 
         .skill {
@@ -78,6 +94,9 @@ const textCase = "uppercase";
     {finished && <p>I finished this tutorial!</p>}
 
     {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
+
+    <p>My favorite food is {Food.name}, which originated in {Food.origin}. 
+        It is {Food.isHealthy ? "healthy" : "not healthy"}.</p>
 
   </body>
 </html>
