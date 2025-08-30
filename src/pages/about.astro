@@ -1,5 +1,5 @@
 ---
-
+import Navigation from "../components/navigation.astro";
 import "../styles/global.css";
 
 /* String variable */
@@ -44,7 +44,6 @@ const Food = {
     <meta name="viewport" content="width=device-width" />
     <title>{pageTitle}</title>
 
-   // page specific styles scoped to this file
     <style define:vars={{skillColor, fontWeight, textCase, fontSize, h1Color}}>
 
       h1 {
@@ -64,9 +63,7 @@ const Food = {
 
   
   <body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
+    <Navigation />
     <h1>{pageTitle}</h1>
     <h2>... and my new Astro site!</h2>
 
