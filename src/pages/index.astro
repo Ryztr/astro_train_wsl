@@ -3,7 +3,7 @@ import '../styles/global.css';
 import Footer from '../components/Footer.astro';
 import Navigation from '../components/navigation.astro';
 
-const pageTitle = "Home";
+const pageTitle = "Home Page";
 ---
 
 <html lang="en">
@@ -14,14 +14,10 @@ const pageTitle = "Home";
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-
 	<body>
 		<Navigation />
-
-		<h1>Hey Astro  Site</h1>
-
+		<h1>{pageTitle}</h1>
 		<Footer />
 	</body>
-
 </html>
 
