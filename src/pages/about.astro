@@ -1,5 +1,6 @@
 ---
 import Navigation from "../components/navigation.astro";
+import Footer from '../components/Footer.astro';
 import "../styles/global.css";
 
 /* String variable */
@@ -95,5 +96,6 @@ const Food = {
     <p>My favorite food is {Food.name}, which originated in {Food.origin}. 
         It is {Food.isHealthy ? "healthy" : <strong>not healthy</strong>}.</p>
 
+    <Footer />
   </body>
 </html>
